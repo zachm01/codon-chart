@@ -20,9 +20,9 @@ try:
     with open("codon_chart.json", "r", encoding="utf8") as f:
         codon_chart = json.load(f)
 
-except:
+except Exception as exc:
     codon_chart = None
-    print("Failed to load codon chart")
+    print("Failed to load codon chart: " + exc)
 
 
 def get_amino(codon: str):
